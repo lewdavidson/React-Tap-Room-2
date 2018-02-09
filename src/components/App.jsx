@@ -1,11 +1,6 @@
 import React from 'react';
 import Nav from './Nav';
 import Body from './Body';
-import EmployeeDisplay from './EmployeeDisplay';
-import InventoryDisplay from './InventoryDisplay';
-
-
-
 
 function App() {
   return(
