@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/img/carrot.png'
 
 
 function Nav(){
@@ -27,8 +28,20 @@ function Nav(){
               text-decoration: none;
               color: #BFD3C1;
             }
+            .lead {
+              display: flex;
+              justify-content: space between;
+            }
+            img {
+              height: 32px;
+              align-self: center;
+              margin-right: 20px;
+            }
         `}</style>
-      <h1 className="lead">Welcome To Pierres General Store</h1>
+      <div className="lead">
+        <img src={logo}></img>
+        <h1>Welcome To Pierres General Store</h1>
+      </div>
       <div className="links">
         <Link to="/employees">Employees Only</Link> | <Link to="/">Home</Link>
       </div>

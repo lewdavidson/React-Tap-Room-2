@@ -8,6 +8,7 @@ function App() {
       <style global jsx>{`
         body {
           font-family: 'Bitter', serif;
+          background-color: #FFE5D4;
         }
       `}</style>
       <Nav />

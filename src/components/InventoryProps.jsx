@@ -16,6 +16,7 @@ function InventoryProps(props) {
             height: 350px;
             text-align: center;
             margin: 5px;
+            background-color: #fff;
           }
           .image {
             height: 75px;
