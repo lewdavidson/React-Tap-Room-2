@@ -72,7 +72,15 @@ const inventory = [
 
 function InventoryDisplay() {
   return(
-    <div>
+    <div className="barf">
+      <style jsx>{`
+          .barf {
+            display: flex;
+            justify-content: space-between;
+            background: red;
+            flex-wrap: wrap;
+          }
+            `}</style>
       {inventory.map((inventory, index) =>
         <InventoryProps pic={inventory.pic}
           name={inventory.name}

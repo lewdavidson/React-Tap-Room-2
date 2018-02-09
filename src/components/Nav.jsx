@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Nav(){
   return(
     <div className="navContainer">
-        <style jsx>{`
+      <style jsx>{`
             .navContainer{
               display: flex;
               position: sticky;
