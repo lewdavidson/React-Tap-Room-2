@@ -8,7 +8,10 @@ import rice from '../assets/img/Rice.png';
 import strawberry from '../assets/img/Strawberry.png';
 import sugar from '../assets/img/Sugar.png';
 import voidegg from '../assets/img/Void.png';
-
+import oil from '../assets/img/Oil.png';
+import cabbage from '../assets/img/Cabbage.png';
+import backpack from '../assets/img/Backpack.png';
+import flour from  '../assets/img/Flour.png';
 
 const inventory = [
   {
@@ -66,6 +69,34 @@ const inventory = [
     farmer: 'Krobus',
     energy: -50,
     pic: voidegg
+  },
+  {
+    name: 'Oil',
+    price: 200,
+    farmer: 'Penny',
+    energy: 20,
+    pic: oil
+  },
+  {
+    name: 'Flour',
+    price: 80,
+    farmer: 'Nathan',
+    energy: 10,
+    pic: flour
+  },
+  {
+    name: 'Red Cabbage',
+    price: 75,
+    farmer: 'Amy',
+    energy: 55,
+    pic: cabbage
+  },
+  {
+    name: 'Backpack',
+    price: 10000,
+    farmer: 'No Farmer',
+    energy: 0,
+    pic: backpack
   }
 ];
 
@@ -77,7 +108,6 @@ function InventoryDisplay() {
           .barf {
             display: flex;
             justify-content: space-between;
-            background: red;
             flex-wrap: wrap;
           }
             `}</style>

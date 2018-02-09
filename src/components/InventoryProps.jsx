@@ -11,18 +11,33 @@ function InventoryProps(props) {
           }
           .invItem {
             border: 2px solid black;
-            width: 250px;
+            border-radius: 5px;
+            width: 300px;
             height: 350px;
+            text-align: center;
+            margin: 5px;
+          }
+          .image {
+            height: 75px;
+            padding: 10px;
+          }
+          .button {
+            height: 20px;
+            width: 150px;
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: #EFC7C2;
+            font-weight: bold;
           }
             `}</style>
       <div className="invItem">
-        <img src={props.pic}></img>
-        <hr></hr>
+        <img src={props.pic} className="image"></img>
         <h2>{props.name}</h2>
+        <hr></hr>
         <h4>Price: {props.price}g</h4>
         <h4>Farmer: {props.farmer}</h4>
         <h4>Energy Gain: {props.energy}</h4>
-        <button>Buy</button>
+        <button className="button">Buy</button>
       </div>
     </div>
   );
