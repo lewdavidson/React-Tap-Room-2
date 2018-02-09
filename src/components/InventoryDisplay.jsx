@@ -28,7 +28,8 @@ function InventoryDisplay() {
             price={inventory.price}
             farmer={inventory.farmer}
             energy={inventory.energy}
-            key={index}/>
+            key={index}
+          button={<span key={index} className="button">Buy</span>} />
         )}
       </div>
     </div>
