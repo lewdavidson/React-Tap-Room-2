@@ -6,9 +6,10 @@ function InventoryProps(props) {
     <div>
       <img src={props.pic}></img>
       <h2>{props.name}</h2>
-      <h2>{props.price}</h2>
-      <h2>{props.farmer}</h2>
-      <h2>{props.energy}</h2>
+      <h4>Price: {props.price}</h4>
+      <h4>Farmer: {props.farmer}</h4>
+      <h4>Energy Gain: {props.energy}</h4>
+      <button>Buy</button>
     </div>
   );
 }
