@@ -18,3 +18,6 @@
 * Originally had my router in App which made the Body component useless! I created the body component for styling purposes originally and wanted to keep it, so I ended up having to move my router into body instead.
 
 * I tried to keep all of my inventory data in a separate component and import it into any component that needed it (which I still think is the way to go) but it wasn't working correctly and I couldn't get them to talk to each other, so I moved my data into the Display component and it works fine.
+ EDIT: I ended up figuring out how to store my inventory object in another separate data file!
+
+* I struggled a bit with conceptualizing how to change a button depending on which area of the page you are on, but ended up messing with the props to get them to behave! 

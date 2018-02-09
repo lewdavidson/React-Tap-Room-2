@@ -72,6 +72,9 @@ function EmployeeDisplay() {
           <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
+            price={inventory.price}
+            farmer={inventory.farmer}
+            energy={inventory.energy}
             key={index}
             button={<span key={index} className="button">Edit</span>} />
         )}
