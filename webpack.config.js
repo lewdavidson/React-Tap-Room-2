@@ -74,7 +74,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: 'template.ejs',
       appMountId: 'react-container',
-      title: 'Lyft',
+      title: 'Pierres',
       filename: resolve(__dirname, 'build', 'index.html')
     })
   ]

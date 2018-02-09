@@ -1,5 +1,5 @@
 {
-  "name": "Pierres",
+  "name": "pierres",
   "version": "1.0.0",
   "description": "A general store using react routing and styling",
   "main": "index.jsx",
