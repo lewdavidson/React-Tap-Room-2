@@ -22,7 +22,8 @@ function InventoryDisplay() {
       <h1>Available Inventory</h1>
       <div className="barf">
         {inventory.map((inventory, index) =>
-          <InventoryProps pic={inventory.pic}
+          <InventoryProps
+            pic={inventory.pic}
             name={inventory.name}
             price={inventory.price}
             farmer={inventory.farmer}
