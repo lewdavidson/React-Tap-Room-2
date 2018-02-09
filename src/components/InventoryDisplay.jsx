@@ -14,57 +14,57 @@ const inventory = [
   {
     pic: eggplant,
     name: 'Eggplant',
-    price: '20g',
+    price: 20,
     farmer: 'Pam',
-    energy: '20',
+    energy: 20,
   },
   {
     name: 'Sugar',
-    price: '100g',
+    price: 100,
     farmer: 'Lewis',
-    energy: '25',
+    energy: 25,
     pic: sugar
   },
   {
     name: 'Rice',
-    price: '200g',
+    price: 200,
     farmer: 'George',
-    energy: '13',
+    energy: 13,
     pic: rice
   },
   {
     name: 'Strawberry',
-    price: '100g',
+    price: 100,
     farmer: 'Demitrius',
-    energy: '50',
+    energy: 50,
     pic: strawberry
   },
   {
     name: 'Hot Peppers',
-    price: '40g',
+    price: 40,
     farmer: 'Shane',
-    energy: '12',
+    energy: 12,
     pic: hotpepper
   },
   {
     name: 'Eggs',
-    price: '90g',
+    price: 90,
     farmer: 'Marnie',
-    energy: '50',
+    energy: 50,
     pic: egg
   },
   {
     name: 'Goat Milk',
-    price: '500g',
+    price: 500,
     farmer: 'Lew',
-    energy: '500',
+    energy: 500,
     pic: goatmilk
   },
   {
     name: 'Void Egg',
-    price: '8000g',
+    price: 8000,
     farmer: 'Krobus',
-    energy: '-50',
+    energy: -50,
     pic: voidegg
   }
 ];

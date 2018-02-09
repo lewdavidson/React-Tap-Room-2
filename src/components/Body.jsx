@@ -5,8 +5,13 @@ import InventoryDisplay from './InventoryDisplay';
 
 function Body() {
   return(
-    <div>
-      <h1>Lookit me Boddddy</h1>
+    <div className="container">
+      <style jsx>{`
+          .container {
+            display: flex;
+          }
+      `}</style>
+      <h1>Available Items</h1>
       <Switch>
         <Route exact path='/' component={InventoryDisplay} />
         <Route exact path='/employees' component={EmployeeDisplay} />
