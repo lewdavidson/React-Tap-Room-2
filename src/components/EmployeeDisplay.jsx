@@ -4,6 +4,21 @@ import inventory from './data';
 import PropTypes from 'prop-types';
 
 function EmployeeDisplay(props) {
+  let _name = null;
+  let _price = null;
+  let _farmer = null;
+  let _energy = null;
+  let _pic = null;
+
+  function handleAddingItem (event) {
+    event.preventDefault();
+    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value});
+    _name.value = '';
+    _price.value = '';
+    _farmer.value = '';
+    _energy.value = '';
+    _pic.value = '';
+  }
   return(
     <div>
       <style jsx>{`
@@ -47,22 +62,27 @@ function EmployeeDisplay(props) {
       <h1>Pierre's Employee Access Area</h1>
       <h2>Restock The Shelves</h2>
       <hr></hr>
-      <form>
+      <form onSubmit={handleAddingItem}>
         <input type='text'
           id='name'
-          placeholder='Item Name'/>
+          placeholder='Item Name'
+          ref={(input) => {_name = input;}}/>
         <input type='number'
           id='price'
-          placeholder='Item Price'/>
+          placeholder='Item Price'
+          ref={(input) => {_price = input;}}/>
         <input type='text'
           id='farmer'
-          placeholder='Items Farmer'/>
+          placeholder='Items Farmer'
+          ref={(input) => {_farmer = input;}}/>
         <input type='number'
           id='energy'
-          placeholder='Energy Level Increase'/>
+          placeholder='Energy Level Increase'
+          ref={(input) => {_energy = input;}}/>
         <input type=''
           id='pic'
-          placeholder='Item Picture URL'/>
+          placeholder='Item Picture URL'
+          ref={(input) => {_pic = input;}}/>
         <button type='submit'>Add Item to Inventory</button>
       </form>
       <h2>Edit or Remove An Item</h2>
