@@ -51,6 +51,8 @@ InventoryProps.propTypes = {
   price: PropTypes.number,
   farmer: PropTypes.string,
   energy: PropTypes.number,
+  key: PropTypes.string,
+  itemId: PropTypes.string,
   button: PropTypes.any,
 };
 

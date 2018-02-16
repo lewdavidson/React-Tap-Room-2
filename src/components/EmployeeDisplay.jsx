@@ -10,9 +10,6 @@ function EmployeeDisplay(props) {
   let _energy = null;
   let _pic = null;
 
-
-  // /employees = path
-
   function handleAddingItem (event) {
     event.preventDefault();
     props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, id: v4()});
@@ -22,6 +19,7 @@ function EmployeeDisplay(props) {
     _energy.value = '';
     _pic.value = '';
   }
+
   return(
     <div>
       <style jsx>{`
@@ -95,7 +93,7 @@ function EmployeeDisplay(props) {
       <hr></hr>
       <p>Choose an item to remove:</p>
       <div className="info">
-        {props.inventoryList.map((inventory) =>
+        {props.inventoryList.map((inventory, id) =>
           <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
@@ -103,7 +101,8 @@ function EmployeeDisplay(props) {
             farmer={inventory.farmer}
             energy={inventory.energy}
             key={inventory.id}
-            button={<span onClick={() => {alert('you clicked');}} key={inventory.id} className="button">Edit</span>} />
+            itemId={id}
+            button={<span onClick={() => {{props.onDeletingItem;}}} key={inventory.id} className="button">Delete</span>} />
         )}
       </div>
     </div>
@@ -113,7 +112,9 @@ function EmployeeDisplay(props) {
 EmployeeDisplay.propTypes = {
   onNewItemAdd: PropTypes.func,
   inventoryList: PropTypes.array,
-  currentRouterPath: PropTypes.string.isRequired
+  currentRouterPath: PropTypes.string.isRequired,
+  onDeletingItem: PropTypes.func,
+  clickedItem: PropTypes.object
 };
 
 export default EmployeeDisplay;

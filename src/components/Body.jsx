@@ -23,6 +23,7 @@ class  Body extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      clickedItem: null,
       inventory: [
         {
           pic: eggplant,
@@ -111,6 +112,7 @@ class  Body extends React.Component {
       ]
     };
     this.handleAddingNewItemToInventory = this.handleAddingNewItemToInventory.bind(this);
+    // this.handleDeletingItem = this.handleDeletingItem.bind(this);
   }
 
   handleAddingNewItemToInventory(newItem) {
@@ -119,12 +121,22 @@ class  Body extends React.Component {
     this.setState({inventory: newInventory});
   }
 
+  handleDeletingItem(itemId) {
+    // this.setState({clickedItem: itemId});
+    // console.log(this.clickedItem);
+    // let newInventory =  this.inventory.splice(this.clickedItem);
+    // this.setState({inventory: newInventory});
+    // console.log(this.inventory);
+  }
+
   render(){
     return (
       <div className="container">
         <Switch>
           <Route exact path='/' render={()=><InventoryDisplay inventoryList={this.state.inventory} />} />
-          <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory} currentRouterPath={props.location.pathname}/>} />
+          <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory} currentRouterPath={props.location.pathname}
+            onDeletingItem={this.handleDeletingItem()}
+            clickedItem ={this.state.clickedItem} />} />
           <Route component={Error404} />
         </Switch>
       </div>
