@@ -4,6 +4,20 @@ import InventoryDisplay from './InventoryDisplay';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 
+//images
+import egg from '../assets/img/egg.png';
+import eggplant from '../assets/img/Eggplant.png';
+import goatmilk from '../assets/img/Goat_Milk.png';
+import hotpepper from '../assets/img/Hot_Pepper.png';
+import rice from '../assets/img/Rice.png';
+import strawberry from '../assets/img/Strawberry.png';
+import sugar from '../assets/img/Sugar.png';
+import voidegg from '../assets/img/Void.png';
+import oil from '../assets/img/Oil.png';
+import cabbage from '../assets/img/Cabbage.png';
+import backpack from '../assets/img/Backpack.png';
+import flour from  '../assets/img/Flour.png';
+
 class  Body extends React.Component {
 
   constructor(props) {
@@ -105,15 +119,17 @@ class  Body extends React.Component {
     this.setState({inventory: newInventory});
   }
 
-  return (
-    <div className="container">
-      <Switch>
-        <Route exact path='/' render={()=><InventoryDisplay inventoryList={this.state.inventory} />} />
-        <Route exact path='/employees' render={()=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory}/>} />
-        <Route component={Error404} />
-      </Switch>
-    </div>
-  );
+  render(){
+    return (
+      <div className="container">
+        <Switch>
+          <Route exact path='/' render={()=><InventoryDisplay inventoryList={this.state.inventory} />} />
+          <Route exact path='/employees' render={()=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory}/>} />
+          <Route component={Error404} />
+        </Switch>
+      </div>
+    );
+  }
 }
 
 export default Body;

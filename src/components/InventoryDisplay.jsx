@@ -1,6 +1,6 @@
 import React from 'react';
 import InventoryProps from './InventoryProps';
-import inventory from './data';
+// import inventory from './data';
 import PropTypes from 'prop-types';
 
 
