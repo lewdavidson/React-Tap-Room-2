@@ -1,6 +1,7 @@
 import React from 'react';
 import EmployeeDisplay from './EmployeeDisplay';
 import InventoryDisplay from './InventoryDisplay';
+import InventoryProps from './InventoryProps';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
 
@@ -122,16 +123,16 @@ class  Body extends React.Component {
     this.setState({inventory: newInventory});
   }
 
-  handleDeletingItem(value, itemId) {
-    // let updatedInventory = this.state.inventory.filter(function(value, itemId) {
-    //   return itemId !== value;
-    // });
-    // this.setState({inventory: updatedInventory});
-  }
-
   handleChangingClickedItem(item){
     this.setState({clickedItem: item});
-    console.log(this.state.clickedItem);
+  }
+
+  handleDeletingItem(clickedItem, item) {
+    let updatedInventory = this.state.inventory.filter(clickedItem);
+    if(item === clickedItem) {
+      updatedInventory.splice(item);
+      this.setState({inventory: updatedInventory});
+    }
   }
 
   render(){
@@ -146,6 +147,7 @@ class  Body extends React.Component {
             onDeletingItem={this.handleDeletingItem}
             onItemClick={this.handleChangingClickedItem} />} />
           <Route component={Error404} />
+          <Route component={InventoryProps} />
         </Switch>
       </div>
     );

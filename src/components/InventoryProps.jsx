@@ -1,9 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
 
 function InventoryProps(props) {
   const inventoryInformation =
     <div className="invContainer">
+      <div className="invItem">
+        {props.currentRouterPath}
+        <img src={props.pic} className="image"></img>
+        <h2>{props.name}</h2>
+        <hr></hr>
+        <h4>Price: {props.price}g</h4>
+        <h4>Farmer: {props.farmer}</h4>
+        <h4>Energy Gain: {props.energy}</h4>
+        <button onClick={() => {props.onItemClick({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});}}>Delete</button>
+      </div>
       <style jsx>{`
         .invContainer {
           display: flex;
@@ -32,14 +43,6 @@ function InventoryProps(props) {
           cursor: pointer;
         }
           `}</style>
-      <div className="invItem">
-        <img src={props.pic} className="image"></img>
-        <h2>{props.name}</h2>
-        <hr></hr>
-        <h4>Price: {props.price}g</h4>
-        <h4>Farmer: {props.farmer}</h4>
-        <h4>Energy Gain: {props.energy}</h4>
-      </div>
     </div>;
   if (props.currentRouterPath === '/employees') {
     return (

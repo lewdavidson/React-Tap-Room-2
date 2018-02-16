@@ -10,9 +10,6 @@ function EmployeeDisplay(props) {
   let _energy = null;
   let _pic = null;
 
-  console.log(props.currentRouterPath);
-
-
   function handleAddingItem (event) {
     event.preventDefault();
     props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, id: v4()});

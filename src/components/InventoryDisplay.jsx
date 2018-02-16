@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 
 
 function InventoryDisplay(props) {
-  console.log(props.currentRouterPath);
   return(
     <div>
       <style jsx>{`
