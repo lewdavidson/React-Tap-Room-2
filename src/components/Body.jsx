@@ -23,7 +23,7 @@ class  Body extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-    inventory: [
+      inventory: [
         {
           pic: eggplant,
           name: 'Eggplant',
@@ -124,7 +124,7 @@ class  Body extends React.Component {
       <div className="container">
         <Switch>
           <Route exact path='/' render={()=><InventoryDisplay inventoryList={this.state.inventory} />} />
-          <Route exact path='/employees' render={()=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory}/>} />
+          <Route exact path='/employees' render={()=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory}/>} />
           <Route component={Error404} />
         </Switch>
       </div>

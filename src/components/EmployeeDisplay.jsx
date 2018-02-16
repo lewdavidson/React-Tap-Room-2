@@ -89,7 +89,7 @@ function EmployeeDisplay(props) {
       <hr></hr>
       <p>Choose an item to remove:</p>
       <div className="info">
-        {inventory.map((inventory, index) =>
+        {props.inventoryList.map((inventory, index) =>
           <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
@@ -105,7 +105,8 @@ function EmployeeDisplay(props) {
 }
 
 EmployeeDisplay.propTypes = {
-  onNewItemAdd: PropTypes.func
+  onNewItemAdd: PropTypes.func, 
+  inventoryList: PropTypes.array
 };
 
 export default EmployeeDisplay;

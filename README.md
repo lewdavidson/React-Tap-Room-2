@@ -36,13 +36,15 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
 * I am thinking about lifting state to my "body" component because it is the closest parent to the other two components that need access to the information.
 
+* After successfully lifting state into the "body" component, I realized that the "data" component was no longer needed to make the app function, so I removed it and moved its contents into the "body" component where it can be used in the entire app.
+
 * To-Do:
 
 [x] Potentially re-factor component tree before lifting state
 
-[ ] Lift state to add the ability to add, display, and manage new inventory
+[x] Lift state to add the ability to add, display, and manage new inventory
 
-[ ] Add functionality to pass refs into APP to display new items
+[x] Add functionality to pass refs into APP to display new items
 
  Go Further:
 
