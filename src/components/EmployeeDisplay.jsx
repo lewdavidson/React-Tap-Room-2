@@ -1,7 +1,7 @@
 import React from 'react';
 import InventoryProps from './InventoryProps';
-import inventory from './data';
 import PropTypes from 'prop-types';
+import { v4 } from 'uuid';
 
 function EmployeeDisplay(props) {
   let _name = null;
@@ -12,7 +12,7 @@ function EmployeeDisplay(props) {
 
   function handleAddingItem (event) {
     event.preventDefault();
-    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value});
+    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, id: v4()});
     _name.value = '';
     _price.value = '';
     _farmer.value = '';
@@ -89,15 +89,15 @@ function EmployeeDisplay(props) {
       <hr></hr>
       <p>Choose an item to remove:</p>
       <div className="info">
-        {props.inventoryList.map((inventory, index) =>
+        {props.inventoryList.map((inventory) =>
           <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
             price={inventory.price}
             farmer={inventory.farmer}
             energy={inventory.energy}
-            key={index}
-            button={<span key={index} className="button">Edit</span>} />
+            key={inventory.id}
+            button={<span key={inventory.id} className="button">Edit</span>} />
         )}
       </div>
     </div>
@@ -105,7 +105,7 @@ function EmployeeDisplay(props) {
 }
 
 EmployeeDisplay.propTypes = {
-  onNewItemAdd: PropTypes.func, 
+  onNewItemAdd: PropTypes.func,
   inventoryList: PropTypes.array
 };
 

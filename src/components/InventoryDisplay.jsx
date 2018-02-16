@@ -20,15 +20,15 @@ function InventoryDisplay(props) {
           `}</style>
       <h1>Available Inventory</h1>
       <div className="barf">
-        {props.inventoryList.map((inventory, index) =>
+        {props.inventoryList.map((inventory) =>
           <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
             price={inventory.price}
             farmer={inventory.farmer}
             energy={inventory.energy}
-            key={index}
-            button={<span key={index} className="button">Buy</span>} />
+            key={inventory.id}
+            button={<span key={inventory.id} className="button">Buy</span>} />
         )}
       </div>
     </div>

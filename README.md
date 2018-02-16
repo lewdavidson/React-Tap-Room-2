@@ -48,4 +48,10 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
  Go Further:
 
- [ ] Add functionality to delete items
+ [ ] Add functionality to delete items from admin
+
+ [ ] Add functionality to edit items from admin
+
+ [ ] Add functionality to 'sell' an item and decrease its inventory
+
+ [x] Add unique IDs to items, instead of looking up by index
