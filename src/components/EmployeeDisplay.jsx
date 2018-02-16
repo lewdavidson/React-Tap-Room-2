@@ -1,8 +1,9 @@
 import React from 'react';
 import InventoryProps from './InventoryProps';
 import inventory from './data';
+import PropTypes from 'prop-types';
 
-function EmployeeDisplay() {
+function EmployeeDisplay(props) {
   return(
     <div>
       <style jsx>{`
@@ -82,5 +83,9 @@ function EmployeeDisplay() {
     </div>
   );
 }
+
+EmployeeDisplay.propTypes = {
+  onNewItemAdd: PropTypes.func
+};
 
 export default EmployeeDisplay;
