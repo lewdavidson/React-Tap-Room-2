@@ -1,8 +1,8 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
 import EmployeeDisplay from './EmployeeDisplay';
 import InventoryDisplay from './InventoryDisplay';
 import Error404 from './Error404';
+import { Switch, Route } from 'react-router-dom';
 
 class  Body extends React.Component {
 
@@ -105,10 +105,10 @@ class  Body extends React.Component {
     this.setState({inventory: newInventory});
   }
 
-  return(
+  return (
     <div className="container">
       <Switch>
-        <Route exact path='/' component={InventoryDisplay} />
+        <Route exact path='/' render={()=><InventoryDisplay inventoryList={this.state.inventory} />} />
         <Route exact path='/employees' render={()=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory}/>} />
         <Route component={Error404} />
       </Switch>

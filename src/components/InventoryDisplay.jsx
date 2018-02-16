@@ -1,10 +1,10 @@
 import React from 'react';
 import InventoryProps from './InventoryProps';
 import inventory from './data';
+import PropTypes from 'prop-types';
 
 
-
-function InventoryDisplay() {
+function InventoryDisplay(props) {
   return(
     <div>
       <style jsx>{`
@@ -21,7 +21,7 @@ function InventoryDisplay() {
           `}</style>
       <h1>Available Inventory</h1>
       <div className="barf">
-        {inventory.map((inventory, index) =>
+        {props.inventoryList.map((inventory, index) =>
           <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
@@ -29,11 +29,15 @@ function InventoryDisplay() {
             farmer={inventory.farmer}
             energy={inventory.energy}
             key={index}
-          button={<span key={index} className="button">Buy</span>} />
+            button={<span key={index} className="button">Buy</span>} />
         )}
       </div>
     </div>
   );
 }
+
+InventoryDisplay.propTypes = {
+  inventoryList: PropTypes.array
+};
 
 export default InventoryDisplay;
