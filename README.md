@@ -38,7 +38,11 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
 * After successfully lifting state into the "body" component, I realized that the "data" component was no longer needed to make the app function, so I removed it and moved its contents into the "body" component where it can be used in the entire app.
 
+* Halfway through the day, I am having some trouble with creating a callback function that removed items from the admin route. By the time the function is fired, the selected item is undefined.
+
+```
 * To-Do:
+```
 
 [x] Potentially re-factor component tree before lifting state
 

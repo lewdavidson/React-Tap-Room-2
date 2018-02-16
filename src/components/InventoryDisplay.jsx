@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 
 function InventoryDisplay(props) {
+  console.log(props.currentRouterPath);
   return(
     <div>
       <style jsx>{`
@@ -28,7 +29,8 @@ function InventoryDisplay(props) {
             farmer={inventory.farmer}
             energy={inventory.energy}
             key={inventory.id}
-            button={<span key={inventory.id} className="button">Buy</span>} />
+            currentRouterPath={props.currentRouterPath}
+            onDeletingItem={props.onDeletingItem} />
         )}
       </div>
     </div>
@@ -37,6 +39,10 @@ function InventoryDisplay(props) {
 
 InventoryDisplay.propTypes = {
   inventoryList: PropTypes.array,
+  onDeletingItem: PropTypes.func,
+  currentRouterPath: PropTypes.string,
 };
 
 export default InventoryDisplay;
+
+// button={<span key={inventory.id} className="button">Buy</span>}

@@ -10,6 +10,9 @@ function EmployeeDisplay(props) {
   let _energy = null;
   let _pic = null;
 
+  console.log(props.currentRouterPath);
+
+
   function handleAddingItem (event) {
     event.preventDefault();
     props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, id: v4()});
@@ -102,7 +105,7 @@ function EmployeeDisplay(props) {
             energy={inventory.energy}
             key={inventory.id}
             itemId={id}
-            button={<span onClick={() => {{props.onDeletingItem;}}} key={inventory.id} className="button">Delete</span>} />
+          />
         )}
       </div>
     </div>
@@ -117,4 +120,5 @@ EmployeeDisplay.propTypes = {
   clickedItem: PropTypes.object
 };
 
+// button={<span onClick={() => {{props.onDeletingItem(itemId);}}} key={inventory.id} className="button">Delete</span>} />
 export default EmployeeDisplay;
