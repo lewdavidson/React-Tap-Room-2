@@ -10,6 +10,9 @@ function EmployeeDisplay(props) {
   let _energy = null;
   let _pic = null;
 
+
+  // /employees = path
+
   function handleAddingItem (event) {
     event.preventDefault();
     props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, id: v4()});
@@ -47,6 +50,9 @@ function EmployeeDisplay(props) {
             box-shadow: 2px 2px gray;
             font-weight: bold;
             background-color: #BFD3C1;
+          }
+          button:hover {
+            cursor: pointer;
           }
           form {
             margin-bottom: 100px;
@@ -97,7 +103,7 @@ function EmployeeDisplay(props) {
             farmer={inventory.farmer}
             energy={inventory.energy}
             key={inventory.id}
-            button={<span key={inventory.id} className="button">Edit</span>} />
+            button={<span onClick={() => {alert('you clicked');}} key={inventory.id} className="button">Edit</span>} />
         )}
       </div>
     </div>
@@ -106,7 +112,8 @@ function EmployeeDisplay(props) {
 
 EmployeeDisplay.propTypes = {
   onNewItemAdd: PropTypes.func,
-  inventoryList: PropTypes.array
+  inventoryList: PropTypes.array,
+  currentRouterPath: PropTypes.string.isRequired
 };
 
 export default EmployeeDisplay;

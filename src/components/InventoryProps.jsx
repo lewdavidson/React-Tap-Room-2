@@ -29,6 +29,7 @@ function InventoryProps(props) {
             border-radius: 10px;
             background-color: #EFC7C2;
             font-weight: bold;
+            cursor: pointer;
           }
             `}</style>
       <div className="invItem">

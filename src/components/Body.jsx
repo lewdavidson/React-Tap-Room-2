@@ -124,7 +124,7 @@ class  Body extends React.Component {
       <div className="container">
         <Switch>
           <Route exact path='/' render={()=><InventoryDisplay inventoryList={this.state.inventory} />} />
-          <Route exact path='/employees' render={()=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory}/>} />
+          <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory} currentRouterPath={props.location.pathname}/>} />
           <Route component={Error404} />
         </Switch>
       </div>

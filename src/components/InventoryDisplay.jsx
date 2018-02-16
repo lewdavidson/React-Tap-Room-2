@@ -36,7 +36,7 @@ function InventoryDisplay(props) {
 }
 
 InventoryDisplay.propTypes = {
-  inventoryList: PropTypes.array
+  inventoryList: PropTypes.array,
 };
 
 export default InventoryDisplay;
