@@ -45,7 +45,7 @@ function InventoryProps(props) {
     return (
       <div>
         {inventoryInformation}
-        <button>Delete</button>
+        <button onClick={()=> {props.onItemClick({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});}}>Delete</button>
       </div>
     );
   } else {
@@ -69,6 +69,8 @@ InventoryProps.propTypes = {
   button: PropTypes.any,
   onDeletingItem: PropTypes.func,
   currentRouterPath: PropTypes.string,
+  onItemClick: PropTypes.func,
+  clickedItem: PropTypes.object,
 };
 
 export default InventoryProps;

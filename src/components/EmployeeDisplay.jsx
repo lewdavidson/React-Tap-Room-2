@@ -117,7 +117,8 @@ EmployeeDisplay.propTypes = {
   inventoryList: PropTypes.array,
   currentRouterPath: PropTypes.string.isRequired,
   onDeletingItem: PropTypes.func,
-  clickedItem: PropTypes.object
+  onItemClick: PropTypes.func,
+  clickedItem: PropTypes.object,
 };
 
 // button={<span onClick={() => {{props.onDeletingItem(itemId);}}} key={inventory.id} className="button">Delete</span>} />
