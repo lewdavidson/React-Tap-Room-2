@@ -44,6 +44,7 @@ function InventoryProps(props) {
   if (props.currentRouterPath === '/employees') {
     return (
       <div>
+        console.log('conditional works');
         {inventoryInformation}
         <button onClick={()=> {props.onItemClick({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});}}>Delete</button>
       </div>
@@ -68,7 +69,7 @@ InventoryProps.propTypes = {
   itemId: PropTypes.number,
   button: PropTypes.any,
   onDeletingItem: PropTypes.func,
-  currentRouterPath: PropTypes.string,
+  currentRouterPath: PropTypes.string.isRequired,
   onItemClick: PropTypes.func,
   clickedItem: PropTypes.object,
 };

@@ -119,6 +119,13 @@ EmployeeDisplay.propTypes = {
   onDeletingItem: PropTypes.func,
   onItemClick: PropTypes.func,
   clickedItem: PropTypes.object,
+  pic: PropTypes.any,
+  name: PropTypes.string,
+  price: PropTypes.number,
+  farmer: PropTypes.string,
+  energy: PropTypes.number,
+  key: PropTypes.string,
+  itemId: PropTypes.number,
 };
 
 // button={<span onClick={() => {{props.onDeletingItem(itemId);}}} key={inventory.id} className="button">Delete</span>} />
