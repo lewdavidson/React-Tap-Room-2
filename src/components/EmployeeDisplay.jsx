@@ -12,7 +12,7 @@ function EmployeeDisplay(props) {
 
   function handleAddingItem (event) {
     event.preventDefault();
-    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, id: v4()});
+    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, itemId: v4()});
     _name.value = '';
     _price.value = '';
     _farmer.value = '';
@@ -79,7 +79,7 @@ function EmployeeDisplay(props) {
           id='farmer'
           placeholder='Items Farmer'
           ref={(input) => {_farmer = input;}}/>
-        <input type='number'
+        <input type= 'number'
           id='energy'
           placeholder='Energy Level Increase'
           ref={(input) => {_energy = input;}}/>
@@ -93,7 +93,7 @@ function EmployeeDisplay(props) {
       <hr></hr>
       <p>Choose an item to remove:</p>
       <div className="info">
-        {props.inventoryList.map((inventory, id) =>
+        {props.inventoryList.map((inventory) =>
           <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
@@ -101,7 +101,9 @@ function EmployeeDisplay(props) {
             farmer={inventory.farmer}
             energy={inventory.energy}
             key={inventory.id}
-            itemId={id}
+            itemId={inventory.id}
+            onDeletingItem={props.onDeletingItem}
+            currentRouterPath={props.currentRouterPath}
           />
         )}
       </div>

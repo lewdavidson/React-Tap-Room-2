@@ -39,7 +39,7 @@ function InventoryDisplay(props) {
 InventoryDisplay.propTypes = {
   inventoryList: PropTypes.array,
   onDeletingItem: PropTypes.func,
-  currentRouterPath: PropTypes.string,
+  currentRouterPath: PropTypes.string.isRequired,
 };
 
 export default InventoryDisplay;
