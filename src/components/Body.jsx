@@ -112,7 +112,7 @@ class  Body extends React.Component {
       ]
     };
     this.handleAddingNewItemToInventory = this.handleAddingNewItemToInventory.bind(this);
-    // this.handleDeletingItem = this.handleDeletingItem.bind(this);
+    this.handleDeletingItem = this.handleDeletingItem.bind(this);
   }
 
   handleAddingNewItemToInventory(newItem) {
@@ -123,10 +123,10 @@ class  Body extends React.Component {
 
   handleDeletingItem(itemId) {
     // this.setState({clickedItem: itemId});
-    // console.log(this.clickedItem);
-    // let newInventory =  this.inventory.splice(this.clickedItem);
-    // this.setState({inventory: newInventory});
-    // console.log(this.inventory);
+    console.log(this.clickedItem);
+    let newInventory =  this.inventory.splice(itemId);
+    this.setState({inventory: newInventory});
+    console.log(this.inventory);
   }
 
   render(){
