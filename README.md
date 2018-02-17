@@ -40,6 +40,8 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
 * Halfway through the day, I am having some trouble with creating a callback function that removed items from the admin route. By the time the function is fired, the selected item is undefined.
 
+* I had a lot of trouble with data flow today, would like to come back to this with fresh eyes to follow the many threads running through the app.
+
 ```
 * To-Do:
 ```
