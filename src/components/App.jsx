@@ -12,14 +12,12 @@ function App() {
         }
         .deleteButton {
           height: 20px;
-          width: 150px;
+          width: 140px;
           border: 2px solid black;
           border-radius: 10px;
           background-color: #EFC7C2;
           font-weight: bold;
           cursor: pointer;
-          margin-left: 28%;
-          margin-bottom: 10px;
         }
         .buyButton {
           height: 20px;
@@ -32,6 +30,12 @@ function App() {
           cursor: pointer;
           margin-left: 28%;
           margin-bottom: 10px;
+        }
+        .employeeButtons {
+          display: flex;
+          justify-content: space-between;
+          margin: 10px;
+          align-items: center;
         }
       `}</style>
       <Nav />

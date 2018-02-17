@@ -2,7 +2,6 @@ import React from 'react';
 import InventoryProps from './InventoryProps';
 import PropTypes from 'prop-types';
 
-
 function InventoryDisplay(props) {
   return(
     <div>
@@ -47,5 +46,3 @@ InventoryDisplay.propTypes = {
 };
 
 export default InventoryDisplay;
-
-// button={<span key={inventory.id} className="button">Buy</span>}

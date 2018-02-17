@@ -124,8 +124,8 @@ class  Body extends React.Component {
   }
 
   handleChangingClickedItem(item){
+    console.log('yo');
     this.setState({clickedItem: item});
-    console.log('clicked item works');
   }
 
   handleDeletingItem(clickedItem, item) {
@@ -142,9 +142,9 @@ class  Body extends React.Component {
         <Switch>
           <Route exact path='/' render={(props)=><InventoryDisplay inventoryList={this.state.inventory} currentRouterPath={props.location.pathname}
             onItemClick={this.handleChangingClickedItem}
-            clickedInventoryItem={this.state.clickedItem}/>} />
+            clickedItem={this.state.clickedItem}/>} />
           <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory} currentRouterPath={props.location.pathname}
-            clickedInventoryItem={this.state.clickedItem}
+            clickedItem={this.state.clickedItem}
             onDeletingItem={this.handleDeletingItem}
             onItemClick={this.handleChangingClickedItem} />} />
           <Route component={Error404} />

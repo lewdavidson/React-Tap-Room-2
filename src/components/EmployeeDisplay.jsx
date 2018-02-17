@@ -61,6 +61,7 @@ function EmployeeDisplay(props) {
           .info {
             display: flex;
             flex-wrap: wrap;
+            justify-content: space-between;
           }
             `}</style>
       <h1>Pierre's Employee Access Area</h1>
@@ -89,7 +90,7 @@ function EmployeeDisplay(props) {
           ref={(input) => {_pic = input;}}/>
         <button type='submit'>Add Item to Inventory</button>
       </form>
-      <h2>Edit or Remove An Item</h2>
+      <h2>Edit or Remove An Item (COMING SOON)</h2>
       <hr></hr>
       <p>Choose an item to remove:</p>
       <div className="info">
@@ -129,5 +130,4 @@ EmployeeDisplay.propTypes = {
   handleChangingClickedItem: PropTypes.func,
 };
 
-// button={<span onClick={() => {{props.onDeletingItem(itemId);}}} key={inventory.id} className="button">Delete</span>} />
 export default EmployeeDisplay;

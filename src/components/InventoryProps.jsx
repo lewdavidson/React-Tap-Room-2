@@ -36,7 +36,10 @@ function InventoryProps(props) {
     return (
       <div>
         {inventoryInformation}
-        <button className="deleteButton" onClick={()=> {props.onItemClick({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});}}>Delete</button>
+        <div className="employeeButtons">
+          <button className="deleteButton" onClick={()=> {props.handleChangingClickedItem({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});}}>Delete</button>
+          <button className='deleteButton'>Edit</button>
+        </div>
       </div>
     );
   } else {
@@ -61,7 +64,8 @@ InventoryProps.propTypes = {
   onDeletingItem: PropTypes.func,
   currentRouterPath: PropTypes.string,
   onItemClick: PropTypes.func,
-  clickedItem: PropTypes.object,
+  clickedItem: PropTypes.any,
+  handleChangingClickedItem: PropTypes.func
 };
 
 export default InventoryProps;
