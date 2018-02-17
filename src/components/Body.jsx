@@ -121,11 +121,11 @@ class  Body extends React.Component {
     let newInventory = this.state.inventory.slice();
     newInventory.push(newItem);
     this.setState({inventory: newInventory});
-    console.log(this.state.inventory);
   }
 
   handleChangingClickedItem(item){
     this.setState({clickedItem: item});
+    console.log('clicked item works');
   }
 
   handleDeletingItem(clickedItem, item) {

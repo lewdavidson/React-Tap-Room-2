@@ -30,22 +30,13 @@ function InventoryProps(props) {
           height: 75px;
           padding: 10px;
         }
-        .buyButton {
-          height: 20px;
-          width: 150px;
-          border: 2px solid black;
-          border-radius: 10px;
-          background-color: #EFC7C2;
-          font-weight: bold;
-          cursor: pointer;
-        }
           `}</style>
     </div>;
   if (props.currentRouterPath === '/employees') {
     return (
       <div>
         {inventoryInformation}
-        <button onClick={()=> {props.onItemClick({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});}}>Delete</button>
+        <button className="deleteButton" onClick={()=> {props.onItemClick({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});}}>Delete</button>
       </div>
     );
   } else {

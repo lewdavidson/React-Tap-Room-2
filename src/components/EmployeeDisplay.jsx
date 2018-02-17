@@ -104,6 +104,7 @@ function EmployeeDisplay(props) {
             itemId={inventory.id}
             onDeletingItem={props.onDeletingItem}
             currentRouterPath={props.currentRouterPath}
+            onItemClick={props.handleChangingClickedItem}
           />
         )}
       </div>
@@ -125,6 +126,7 @@ EmployeeDisplay.propTypes = {
   energy: PropTypes.number,
   key: PropTypes.string,
   itemId: PropTypes.number,
+  handleChangingClickedItem: PropTypes.func,
 };
 
 // button={<span onClick={() => {{props.onDeletingItem(itemId);}}} key={inventory.id} className="button">Delete</span>} />

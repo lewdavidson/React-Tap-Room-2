@@ -29,7 +29,8 @@ function InventoryDisplay(props) {
             energy={inventory.energy}
             key={inventory.id}
             currentRouterPath={props.currentRouterPath}
-            onDeletingItem={props.onDeletingItem} />
+            onDeletingItem={props.onDeletingItem}
+            onItemClick={props.handleChangingClickedItem} />
         )}
       </div>
     </div>
@@ -40,6 +41,9 @@ InventoryDisplay.propTypes = {
   inventoryList: PropTypes.array,
   onDeletingItem: PropTypes.func,
   currentRouterPath: PropTypes.string.isRequired,
+  onItemClick: PropTypes.func,
+  clickedItem: PropTypes.object,
+  handleChangingClickedItem: PropTypes.func,
 };
 
 export default InventoryDisplay;
