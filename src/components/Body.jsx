@@ -114,7 +114,7 @@ class  Body extends React.Component {
     };
     this.handleAddingNewItemToInventory = this.handleAddingNewItemToInventory.bind(this);
     this.handleDeletingItem = this.handleDeletingItem.bind(this);
-    this.handleChangingClickedItem = this.handleChangingClickedItem.bind(this);
+    this.handleClickedItem = this.handleClickedItem.bind(this);
   }
 
   handleAddingNewItemToInventory(newItem) {
@@ -123,7 +123,7 @@ class  Body extends React.Component {
     this.setState({inventory: newInventory});
   }
 
-  handleChangingClickedItem(item){
+  handleClickedItem(item){
     console.log('yo');
     this.setState({clickedItem: item});
   }
@@ -144,9 +144,8 @@ class  Body extends React.Component {
             onItemClick={this.handleChangingClickedItem}
             clickedItem={this.state.clickedItem}/>} />
           <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory} currentRouterPath={props.location.pathname}
-            clickedItem={this.state.clickedItem}
-            onDeletingItem={this.handleDeletingItem}
-            onItemClick={this.handleChangingClickedItem} />} />
+            onClickedItem={this.handleClickedItem}
+            onDeletingItem={this.handleDeletingItem}/>} />
           <Route component={Error404} />
           <Route component={InventoryProps} />
         </Switch>

@@ -2,6 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function InventoryProps(props) {
+
+  function handleChangingClickedItem (event) {
+    event.preventDefault();
+    props.onClickedItem({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});
+  }
+
   const inventoryInformation =
     <div className="invContainer">
       <div className="invItem">
@@ -37,7 +43,7 @@ function InventoryProps(props) {
       <div>
         {inventoryInformation}
         <div className="employeeButtons">
-          <button className="deleteButton" onClick={()=> {props.handleChangingClickedItem({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});}}>Delete</button>
+          <button onClick={handleChangingClickedItem} className="deleteButton" type='submit'>Delete</button>
           <button className='deleteButton'>Edit</button>
         </div>
       </div>
@@ -63,9 +69,10 @@ InventoryProps.propTypes = {
   button: PropTypes.any,
   onDeletingItem: PropTypes.func,
   currentRouterPath: PropTypes.string,
-  onItemClick: PropTypes.func,
-  clickedItem: PropTypes.any,
-  handleChangingClickedItem: PropTypes.func
+  onClickedItem: PropTypes.func,
+  // onItemClick: PropTypes.func,
+  // clickedItem: PropTypes.any,
+  // handleChangingClickedItem: PropTypes.func
 };
 
 export default InventoryProps;
