@@ -20,7 +20,7 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
  ___
 ```
-* Notes:
+ Notes:
 ```
 
 * Originally had my router in App which made the Body component useless! I created the body component for styling purposes originally and wanted to keep it, so I ended up having to move my router into body instead.
@@ -31,7 +31,7 @@ Right off the bat there are a few that come to mind. React needs more separate c
 * I struggled a bit with conceptualizing how to change a button depending on which area of the page you are on, but ended up messing with the props to get them to behave!
 
 ```
-* Notes Week 2:
+ Notes Week 2:
 ```
 
 * I am thinking about lifting state to my "body" component because it is the closest parent to the other two components that need access to the information.
@@ -42,8 +42,10 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
 * I had a lot of trouble with data flow today, would like to come back to this with fresh eyes to follow the many threads running through the app.
 
+* Figured out how to convert my array of objects to an object of objects so that I could assign an id to each item and target it in order to delete it. I also realized that I was both affecting employee display component and inventory display component in order to produce and display inventory items.
+
 ```
-* To-Do:
+ To-Do:
 ```
 
 [x] Potentially re-factor component tree before lifting state
@@ -54,7 +56,7 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
  Go Further:
 
- [ ] Add functionality to delete items from admin
+ [x] Add functionality to delete items from admin
 
  [ ] Add functionality to edit items from admin
 
