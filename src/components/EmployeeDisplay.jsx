@@ -2,6 +2,8 @@ import React from 'react';
 import InventoryProps from './InventoryProps';
 import PropTypes from 'prop-types';
 
+//I think I might need to re-factor this to have local state to show and hide edit form. Then pass refs from that to app where app state can be re-defined.
+
 function EmployeeDisplay(props) {
   let _name = null;
   let _price = null;
@@ -95,7 +97,7 @@ function EmployeeDisplay(props) {
           ref={(input) => {_pic = input;}}/>
         <button type='submit'>Add Item to Inventory</button>
       </form>
-      <h2>Edit or Remove An Item (COMING SOON)</h2>
+      <h2>Edit (coming soon) or Remove An Item</h2>
       <hr></hr>
       <p>Choose an item to remove:</p>
       <div className="info">

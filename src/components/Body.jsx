@@ -127,6 +127,7 @@ class  Body extends React.Component {
     this.handleAddingNewItemToInventory = this.handleAddingNewItemToInventory.bind(this);
     this.handleDeletingItem = this.handleDeletingItem.bind(this);
     this.handleBuyingItem = this.handleBuyingItem.bind(this);
+    this.handleEditingItem = this.handleEditingItem.bind(this);
   }
 
   handleAddingNewItemToInventory(newItem) {
@@ -155,6 +156,12 @@ class  Body extends React.Component {
     }
   }
 
+  handleEditingItem(itemId) {
+    //this will handle defining the specific item clicked
+  }
+
+  // will need another function that fires on a "done editing button" to take refs and set app state to include new values.
+
   render(){
     return (
       <div className="container">
@@ -162,7 +169,7 @@ class  Body extends React.Component {
           <Route exact path='/' render={(props)=><InventoryDisplay inventoryList={this.state.inventory}
             currentRouterPath={props.location.pathname} onBuyingItem={this.handleBuyingItem} />} />
           <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory}
-            onDeletingItem={this.handleDeletingItem} currentRouterPath={props.location.pathname} />} />
+            onDeletingItem={this.handleDeletingItem} onEditingItem={this.handleEditingItem} currentRouterPath={props.location.pathname} />} />
           <Route component={Error404} />
           <Route component={InventoryProps} />
         </Switch>

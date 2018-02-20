@@ -44,7 +44,9 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
 * Figured out how to convert my array of objects to an object of objects so that I could assign an id to each item and target it in order to delete it. I also realized that I was both affecting employee display component and inventory display component in order to produce and display inventory items.
 
-* I played around with my new object and figured out how to "sell" an item and remove it from my store once it has been sold out! 
+* I played around with my new object and figured out how to "sell" an item and remove it from my store once it has been sold out!
+
+* I am thinking about how to get an edit form to show and grab new values for the item being edited. I think I will have to define local state inside 'employee display' in order to dynamically show and hide the form. I will need a function in app state to define which item I am editing, and probably another one to work when some sort of 'done editing' button is clicked to take in the refs and redefine state using those refs.
 
 ```
  To-Do:

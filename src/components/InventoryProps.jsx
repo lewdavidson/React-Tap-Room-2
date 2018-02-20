@@ -11,6 +11,10 @@ function InventoryProps(props) {
     props.onBuyingItem(props.itemId);
   }
 
+  function handleEditingItem() {
+    props.onEditingItem(props.itemId);
+  }
+
   const inventoryInformation =
     <div className="invContainer">
       <div className="invItem">
@@ -48,7 +52,8 @@ function InventoryProps(props) {
         {inventoryInformation}
         <div className="employeeButtons">
           <button onClick={handleChangingClickedItem} className="deleteButton" type='submit'>Delete</button>
-          <button className='deleteButton'>Edit</button>
+          <button onClick={handleEditingItem} className='deleteButton'>Edit</button>
+          //this will grab the item to edit and trigger form being rendered
         </div>
       </div>
     );
@@ -74,6 +79,7 @@ InventoryProps.propTypes = {
   button: PropTypes.any,
   onDeletingItem: PropTypes.func,
   onBuyingItem: PropTypes.func,
+  onEditingItem: PropTypes.func,
   currentRouterPath: PropTypes.string,
 };
 
