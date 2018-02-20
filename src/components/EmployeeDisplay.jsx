@@ -1,7 +1,6 @@
 import React from 'react';
 import InventoryProps from './InventoryProps';
 import PropTypes from 'prop-types';
-import { v4 } from 'uuid';
 
 function EmployeeDisplay(props) {
   let _name = null;
@@ -12,7 +11,7 @@ function EmployeeDisplay(props) {
 
   function handleAddingItem (event) {
     event.preventDefault();
-    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, itemId: v4()});
+    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value});
     _name.value = '';
     _price.value = '';
     _farmer.value = '';
@@ -94,20 +93,20 @@ function EmployeeDisplay(props) {
       <hr></hr>
       <p>Choose an item to remove:</p>
       <div className="info">
-        {props.inventoryList.map((inventory) =>
-          <InventoryProps
+        {Object.keys(props.inventoryList).map(function(itemId) {
+          let inventory = props.inventoryList[itemId];
+          return <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
             price={inventory.price}
             farmer={inventory.farmer}
             energy={inventory.energy}
-            key={inventory.id}
-            itemId={inventory.id}
+            key={itemId}
+            itemId={itemId}
             onDeletingItem={props.onDeletingItem}
             currentRouterPath={props.currentRouterPath}
-            onItemClick={props.handleChangingClickedItem}
-          />
-        )}
+          />;
+        })}
       </div>
     </div>
   );
@@ -115,18 +114,16 @@ function EmployeeDisplay(props) {
 
 EmployeeDisplay.propTypes = {
   onNewItemAdd: PropTypes.func,
-  inventoryList: PropTypes.array,
+  inventoryList: PropTypes.object,
   currentRouterPath: PropTypes.string.isRequired,
   onDeletingItem: PropTypes.func,
-  onItemClick: PropTypes.func,
-  clickedItem: PropTypes.object,
   pic: PropTypes.any,
   name: PropTypes.string,
   price: PropTypes.number,
   farmer: PropTypes.string,
   energy: PropTypes.number,
   key: PropTypes.string,
-  itemId: PropTypes.number,
+  itemId: PropTypes.string,
   handleChangingClickedItem: PropTypes.func,
 };
 

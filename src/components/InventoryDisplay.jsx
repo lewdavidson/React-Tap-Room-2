@@ -19,29 +19,28 @@ function InventoryDisplay(props) {
           `}</style>
       <h1>Available Inventory</h1>
       <div className="barf">
-        {props.inventoryList.map((inventory) =>
-          <InventoryProps
+        {Object.keys(props.inventoryList).map(function(itemId) {
+          let inventory = props.inventoryList[itemId];
+          return <InventoryProps
             pic={inventory.pic}
             name={inventory.name}
             price={inventory.price}
             farmer={inventory.farmer}
             energy={inventory.energy}
-            key={inventory.id}
+            key={itemId}
+            itemId={itemId}
             currentRouterPath={props.currentRouterPath}
-            onDeletingItem={props.onDeletingItem}
-            onItemClick={props.handleChangingClickedItem} />
-        )}
+            onDeletingItem={props.onDeletingItem} />;
+        })}
       </div>
     </div>
   );
 }
 
 InventoryDisplay.propTypes = {
-  inventoryList: PropTypes.array,
+  inventoryList: PropTypes.object,
   onDeletingItem: PropTypes.func,
   currentRouterPath: PropTypes.string.isRequired,
-  onItemClick: PropTypes.func,
-  clickedItem: PropTypes.object,
   handleChangingClickedItem: PropTypes.func,
 };
 

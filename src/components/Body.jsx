@@ -4,6 +4,7 @@ import InventoryDisplay from './InventoryDisplay';
 import InventoryProps from './InventoryProps';
 import Error404 from './Error404';
 import { Switch, Route } from 'react-router-dom';
+import { v4 } from 'uuid';
 
 //images
 import egg from '../assets/img/egg.png';
@@ -24,128 +25,119 @@ class  Body extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      clickedItem: null,
-      inventory: [
-        {
+      inventory: {
+        '0': {
           pic: eggplant,
           name: 'Eggplant',
           price: 20,
           farmer: 'Pam',
           energy: 20,
         },
-        {
+        '1': {
           name: 'Sugar',
           price: 100,
           farmer: 'Lewis',
           energy: 25,
           pic: sugar
         },
-        {
+        '2': {
           name: 'Rice',
           price: 200,
           farmer: 'George',
           energy: 13,
           pic: rice
         },
-        {
+        '3': {
           name: 'Strawberry',
           price: 100,
           farmer: 'Demitrius',
           energy: 50,
           pic: strawberry
         },
-        {
+        '4': {
           name: 'Hot Peppers',
           price: 40,
           farmer: 'Shane',
           energy: 12,
           pic: hotpepper
         },
-        {
+        '5': {
           name: 'Eggs',
           price: 90,
           farmer: 'Marnie',
           energy: 50,
           pic: egg
         },
-        {
+        '6': {
           name: 'Goat Milk',
           price: 500,
           farmer: 'Lew',
           energy: 500,
           pic: goatmilk
         },
-        {
+        '7': {
           name: 'Void Egg',
           price: 8000,
           farmer: 'Krobus',
           energy: -50,
           pic: voidegg
         },
-        {
+        '8': {
           name: 'Oil',
           price: 200,
           farmer: 'Penny',
           energy: 20,
           pic: oil
         },
-        {
+        '9': {
           name: 'Flour',
           price: 80,
           farmer: 'Nathan',
           energy: 10,
           pic: flour
         },
-        {
+        '10': {
           name: 'Red Cabbage',
           price: 75,
           farmer: 'Amy',
           energy: 55,
           pic: cabbage
         },
-        {
+        '11': {
           name: 'Backpack',
           price: 10000,
           farmer: 'No Farmer',
           energy: 0,
           pic: backpack
         }
-      ]
+      }
     };
     this.handleAddingNewItemToInventory = this.handleAddingNewItemToInventory.bind(this);
     this.handleDeletingItem = this.handleDeletingItem.bind(this);
-    this.handleClickedItem = this.handleClickedItem.bind(this);
   }
 
   handleAddingNewItemToInventory(newItem) {
-    let newInventory = this.state.inventory.slice();
-    newInventory.push(newItem);
+    let newInventoryId = v4();
+    let newInventory = Object.assign({}, this.state.inventory, {
+      [newInventoryId]: newItem
+    });
     this.setState({inventory: newInventory});
   }
 
-  handleClickedItem(item){
-    console.log('yo');
-    this.setState({clickedItem: item});
-  }
-
-  handleDeletingItem(clickedItem, item) {
-    let updatedInventory = this.state.inventory.filter(clickedItem);
-    if(item === clickedItem) {
-      updatedInventory.splice(item);
-      this.setState({inventory: updatedInventory});
-    }
+  handleDeletingItem(itemId) {
+    let updatedInventory = Object.assign({}, this.state.inventory);
+    delete updatedInventory[itemId];
+    this.setState({inventory: updatedInventory});
   }
 
   render(){
     return (
       <div className="container">
         <Switch>
-          <Route exact path='/' render={(props)=><InventoryDisplay inventoryList={this.state.inventory} currentRouterPath={props.location.pathname}
-            onItemClick={this.handleChangingClickedItem}
-            clickedItem={this.state.clickedItem}/>} />
-          <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory} currentRouterPath={props.location.pathname}
-            onClickedItem={this.handleClickedItem}
-            onDeletingItem={this.handleDeletingItem}/>} />
+          <Route exact path='/' render={(props)=><InventoryDisplay inventoryList={this.state.inventory}
+            currentRouterPath={props.location.pathname} />} />
+          <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory}
+            onDeletingItem={this.handleDeletingItem} currentRouterPath={props.location.pathname} />} />
           <Route component={Error404} />
           <Route component={InventoryProps} />
         </Switch>

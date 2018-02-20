@@ -3,9 +3,8 @@ import PropTypes from 'prop-types';
 
 function InventoryProps(props) {
 
-  function handleChangingClickedItem (event) {
-    event.preventDefault();
-    props.onClickedItem({name:props.name, farmer: props.farmer, pic: props.pic, price: props.price, energy: props.energy, id: props.itemId});
+  function handleChangingClickedItem() {
+    props.onDeletingItem(props.itemId);
   }
 
   const inventoryInformation =
@@ -69,10 +68,6 @@ InventoryProps.propTypes = {
   button: PropTypes.any,
   onDeletingItem: PropTypes.func,
   currentRouterPath: PropTypes.string,
-  onClickedItem: PropTypes.func,
-  // onItemClick: PropTypes.func,
-  // clickedItem: PropTypes.any,
-  // handleChangingClickedItem: PropTypes.func
 };
 
 export default InventoryProps;
