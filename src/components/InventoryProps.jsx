@@ -16,6 +16,7 @@ function InventoryProps(props) {
         <h4>Price: {props.price}g</h4>
         <h4>Farmer: {props.farmer}</h4>
         <h4>Energy Gain: {props.energy}</h4>
+        <h4>Remaining Quantity: {props.quantity}</h4>
       </div>
       <style jsx>{`
         .invContainer {
@@ -63,6 +64,7 @@ InventoryProps.propTypes = {
   price: PropTypes.number,
   farmer: PropTypes.string,
   energy: PropTypes.number,
+  quantity: PropTypes.number,
   key: PropTypes.string,
   itemId: PropTypes.number,
   button: PropTypes.any,

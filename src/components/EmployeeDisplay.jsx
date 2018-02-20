@@ -8,15 +8,17 @@ function EmployeeDisplay(props) {
   let _farmer = null;
   let _energy = null;
   let _pic = null;
+  let _quantity = null;
 
   function handleAddingItem (event) {
     event.preventDefault();
-    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value});
+    props.onNewItemAdd({name: _name.value, price: _price.value, farmer: _farmer.value, energy: _energy.value, pic: _pic.value, quantity: _quantity.value});
     _name.value = '';
     _price.value = '';
     _farmer.value = '';
     _energy.value = '';
     _pic.value = '';
+    _quantity.value = '';
   }
 
   return(
@@ -83,6 +85,10 @@ function EmployeeDisplay(props) {
           id='energy'
           placeholder='Energy Level Increase'
           ref={(input) => {_energy = input;}}/>
+        <input type= 'number'
+          id='quantity'
+          placeholder='Quantity'
+          ref={(input) => {_quantity = input;}}/>
         <input type=''
           id='pic'
           placeholder='Item Picture URL'
@@ -101,6 +107,7 @@ function EmployeeDisplay(props) {
             price={inventory.price}
             farmer={inventory.farmer}
             energy={inventory.energy}
+            quantity={inventory.quantity}
             key={itemId}
             itemId={itemId}
             onDeletingItem={props.onDeletingItem}
@@ -122,6 +129,7 @@ EmployeeDisplay.propTypes = {
   price: PropTypes.number,
   farmer: PropTypes.string,
   energy: PropTypes.number,
+  quantity: PropTypes.number,
   key: PropTypes.string,
   itemId: PropTypes.string,
   handleChangingClickedItem: PropTypes.func,

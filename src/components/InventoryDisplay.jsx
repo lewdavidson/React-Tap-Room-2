@@ -27,6 +27,7 @@ function InventoryDisplay(props) {
             price={inventory.price}
             farmer={inventory.farmer}
             energy={inventory.energy}
+            quantity={inventory.quantity}
             key={itemId}
             itemId={itemId}
             currentRouterPath={props.currentRouterPath}

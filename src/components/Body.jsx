@@ -32,83 +32,95 @@ class  Body extends React.Component {
           price: 20,
           farmer: 'Pam',
           energy: 20,
+          quantity: 28
         },
         '1': {
           name: 'Sugar',
           price: 100,
           farmer: 'Lewis',
           energy: 25,
-          pic: sugar
+          pic: sugar,
+          quantity: 25
         },
         '2': {
           name: 'Rice',
           price: 200,
           farmer: 'George',
           energy: 13,
-          pic: rice
+          pic: rice,
+          quantity: 18
         },
         '3': {
           name: 'Strawberry',
           price: 100,
           farmer: 'Demitrius',
           energy: 50,
-          pic: strawberry
+          pic: strawberry,
+          quantity: 12
         },
         '4': {
           name: 'Hot Peppers',
           price: 40,
           farmer: 'Shane',
           energy: 12,
-          pic: hotpepper
+          pic: hotpepper,
+          quantity: 38
         },
         '5': {
           name: 'Eggs',
           price: 90,
           farmer: 'Marnie',
           energy: 50,
-          pic: egg
+          pic: egg,
+          quantity: 40
         },
         '6': {
           name: 'Goat Milk',
           price: 500,
           farmer: 'Lew',
           energy: 500,
-          pic: goatmilk
+          pic: goatmilk,
+          quantity: 58
         },
         '7': {
           name: 'Void Egg',
           price: 8000,
           farmer: 'Krobus',
           energy: -50,
-          pic: voidegg
+          pic: voidegg,
+          quantity: 67
         },
         '8': {
           name: 'Oil',
           price: 200,
           farmer: 'Penny',
           energy: 20,
-          pic: oil
+          pic: oil,
+          quantity: 19
         },
         '9': {
           name: 'Flour',
           price: 80,
           farmer: 'Nathan',
           energy: 10,
-          pic: flour
+          pic: flour,
+          quantity: 12
         },
         '10': {
           name: 'Red Cabbage',
           price: 75,
           farmer: 'Amy',
           energy: 55,
-          pic: cabbage
+          pic: cabbage,
+          quantity: 56
         },
         '11': {
           name: 'Backpack',
           price: 10000,
           farmer: 'No Farmer',
           energy: 0,
-          pic: backpack
+          pic: backpack,
+          quantity: 39
         }
       }
     };
