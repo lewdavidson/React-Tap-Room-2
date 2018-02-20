@@ -44,6 +44,8 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
 * Figured out how to convert my array of objects to an object of objects so that I could assign an id to each item and target it in order to delete it. I also realized that I was both affecting employee display component and inventory display component in order to produce and display inventory items.
 
+* I played around with my new object and figured out how to "sell" an item and remove it from my store once it has been sold out! 
+
 ```
  To-Do:
 ```
@@ -60,6 +62,6 @@ Right off the bat there are a few that come to mind. React needs more separate c
 
  [ ] Add functionality to edit items from admin
 
- [ ] Add functionality to 'sell' an item and decrease its inventory
+ [x] Add functionality to 'sell' an item and decrease its inventory
 
  [x] Add unique IDs to items, instead of looking up by index

@@ -7,6 +7,10 @@ function InventoryProps(props) {
     props.onDeletingItem(props.itemId);
   }
 
+  function handleBuyingItem() {
+    props.onBuyingItem(props.itemId);
+  }
+
   const inventoryInformation =
     <div className="invContainer">
       <div className="invItem">
@@ -52,7 +56,7 @@ function InventoryProps(props) {
     return (
       <div>
         {inventoryInformation}
-        <button className="buyButton">Buy</button>
+        <button onClick={handleBuyingItem} className="buyButton">Buy</button>
       </div>
     );
   }
@@ -66,9 +70,10 @@ InventoryProps.propTypes = {
   energy: PropTypes.number,
   quantity: PropTypes.number,
   key: PropTypes.string,
-  itemId: PropTypes.number,
+  itemId: PropTypes.string,
   button: PropTypes.any,
   onDeletingItem: PropTypes.func,
+  onBuyingItem: PropTypes.func,
   currentRouterPath: PropTypes.string,
 };
 

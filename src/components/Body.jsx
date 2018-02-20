@@ -32,7 +32,7 @@ class  Body extends React.Component {
           price: 20,
           farmer: 'Pam',
           energy: 20,
-          quantity: 28
+          quantity: 5
         },
         '1': {
           name: 'Sugar',
@@ -126,6 +126,7 @@ class  Body extends React.Component {
     };
     this.handleAddingNewItemToInventory = this.handleAddingNewItemToInventory.bind(this);
     this.handleDeletingItem = this.handleDeletingItem.bind(this);
+    this.handleBuyingItem = this.handleBuyingItem.bind(this);
   }
 
   handleAddingNewItemToInventory(newItem) {
@@ -142,12 +143,24 @@ class  Body extends React.Component {
     this.setState({inventory: updatedInventory});
   }
 
+  handleBuyingItem(itemId) {
+    let purchUpdated = Object.assign({}, this.state.inventory);
+    let purchInventory = purchUpdated[itemId].quantity -=1;
+    if (purchUpdated[itemId].quantity >= 1) {
+      this.setState({inventory: purchUpdated});
+    } else {
+      let updatedInventory = Object.assign({}, this.state.inventory);
+      delete updatedInventory[itemId];
+      this.setState({inventory: updatedInventory});
+    }
+  }
+
   render(){
     return (
       <div className="container">
         <Switch>
           <Route exact path='/' render={(props)=><InventoryDisplay inventoryList={this.state.inventory}
-            currentRouterPath={props.location.pathname} />} />
+            currentRouterPath={props.location.pathname} onBuyingItem={this.handleBuyingItem} />} />
           <Route exact path='/employees' render={(props)=><EmployeeDisplay onNewItemAdd={this.handleAddingNewItemToInventory} inventoryList={this.state.inventory}
             onDeletingItem={this.handleDeletingItem} currentRouterPath={props.location.pathname} />} />
           <Route component={Error404} />
