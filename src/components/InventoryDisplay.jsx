@@ -33,7 +33,7 @@ function InventoryDisplay(props) {
             currentRouterPath={props.currentRouterPath}
             onDeletingItem={props.onDeletingItem}
             onBuyingItem={props.onBuyingItem}
-             />;
+          />;
         })}
       </div>
     </div>

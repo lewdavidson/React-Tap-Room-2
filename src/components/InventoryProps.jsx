@@ -53,7 +53,6 @@ function InventoryProps(props) {
         <div className="employeeButtons">
           <button onClick={handleChangingClickedItem} className="deleteButton" type='submit'>Delete</button>
           <button onClick={handleEditingItem} className='deleteButton'>Edit</button>
-          //this will grab the item to edit and trigger form being rendered
         </div>
       </div>
     );
